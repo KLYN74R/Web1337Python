@@ -76,16 +76,3 @@ class Web1337(Web1337BlockApi,Web1337MiscApi,Web1337StateApi,Web1337TxsApi):
         transaction["sig"] = signing_key.sign(message).signature.hex()
 
         return transaction
-
-
-
-
-
-# Example usage
-web1337 = Web1337("symbiote_id", 1, "http://node.url", "http://proxy.url")
-
-transaction = web1337.create_default_transaction("shard", "your_address", "your_private_key", 1, "recipient", 1, 100)
-
-response = web1337.send_transaction(transaction)
-
-print(response)
