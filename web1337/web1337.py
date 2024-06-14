@@ -6,8 +6,9 @@ import json
 # Import classes for other Klyntar API (see ./api directory)
 
 from api.block_api import Web1337BlockApi
-from api.misc_api import Web1337MiscApi
+from api.epoch_api import Web1337EpochApi
 from api.state_api import Web1337StateApi
+from api.misc_api import Web1337MiscApi
 from api.txs_api import Web1337TxsApi
 
 
@@ -17,7 +18,7 @@ from api.txs_api import Web1337TxsApi
 
 
 
-class Web1337(Web1337BlockApi,Web1337MiscApi,Web1337StateApi,Web1337TxsApi):
+class Web1337(Web1337BlockApi,Web1337EpochApi,Web1337MiscApi,Web1337StateApi,Web1337TxsApi):
 
     def __init__(self, symbiotic_chain_id, workflow_version, node_url, proxy_url=None):
         self.symbiotic_chains = {}
