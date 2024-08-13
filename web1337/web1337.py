@@ -64,7 +64,7 @@ class Web1337(Web1337BlockApi,Web1337EpochApi,Web1337MiscApi,Web1337StateApi,Web
     def create_default_transaction(self, origin_shard, your_address, your_private_key, nonce, recipient, fee, amount_in_kly, rev_t=None):
         workflow_version = self.symbiotes[self.current_symbiote]["workflow_version"]
         payload = {
-            "type": "D",
+            "sigType": "D",
             "to": recipient,
             "amount": amount_in_kly
         }
